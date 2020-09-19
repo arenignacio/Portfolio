@@ -1,0 +1,25 @@
+{
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"babel-cli": "^6.26.0",
+		"babel-preset-react-app": "^3.1.2",
+		"lodash": "^4.17.20"
+	},
+	"devDependencies": {
+		"webpack": "^4.44.2",
+		"webpack-cli": "^3.3.12",
+		"webpack-dev-server": "^3.11.0"
+	},
+	"scripts": {
+		"start": "webpack-dev-server --mode development --open",
+		"build": "webpack --mode production",
+		"dev": "webpack --mode development",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"keywords": [],
+	"author": "Edsiaren Ignacio",
+	"license": "ISC"
+}
