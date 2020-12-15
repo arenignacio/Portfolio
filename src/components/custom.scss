@@ -2,6 +2,8 @@
 
 body {
 	background-color: #fff;
+	color: #61686b;
+	font-family: 'Raleway', sans-serif;
 }
 
 .bg-white {
@@ -41,7 +43,167 @@ body {
 	}
 }
 
-//Hero
+.arrow {
+	border: double whitesmoke;
+	border-width: 0 3px 3px 0;
+	padding: 3px;
+	height: 30px;
+	width: 30px;
+	display: inline-block;
+
+	&.down {
+		transform: rotate(45deg);
+	}
+}
+
+//HEADER
+.header {
+	height: 800px;
+}
+
+.hero-image {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.35)),
+		url('../img/baguio.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 800px;
+
+	@media (min-width: 486px) {
+		height: 800;
+	}
+}
+
+.hero-text {
+	color: whitesmoke;
+	text-align: center;
+	position: absolute;
+	top: 40%;
+	width: 100%;
+	font-size: 30px;
+	font-family: 'Raleway', sans-serif;
+	letter-spacing: 3px;
+
+	> p:first-of-type {
+		font-size: 46px;
+		margin-bottom: 0;
+	}
+
+	> p:nth-child(2) {
+		font-size: 32px;
+		letter-spacing: 6px;
+	}
+
+	button {
+		position: relative;
+		left: 15px;
+		border: rgba($color: whitesmoke, $alpha: 1) solid thin;
+		border-radius: 25px;
+		font-family: 'Raleway', sans-serif;
+		background-color: rgba(0, 0, 0, 0.5);
+		color: rgba($color: whitesmoke, $alpha: 0.5);
+		margin-top: 10px;
+		font-size: 22px;
+		transition: color 0.5s ease;
+
+		&:hover {
+			opacity: 1;
+			backdrop-filter: blur(30px);
+			color: rgba($color: whitesmoke, $alpha: 1);
+			background-color: rgba(0, 0, 0, 0.5);
+			transition: color 0.5s ease;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
+
+.greeting-container > a {
+	scroll-behavior: smooth;
+	behavior: smooth;
+}
+
+.bar {
+	margin-top: 20px;
+	color: white;
+	border-top: solid 1px;
+	border-bottom: solid 1px;
+	height: 1px;
+	width: 350px;
+	z-index: 1;
+	animation: barspread 2s ease-out forwards;
+
+	/* &:hover {		
+		transform: translateY(-5px);
+		height: 5px;
+		width: 30%;
+		transition: all 1.5s; 
+	} */
+}
+
+.exit {
+	position: relative;
+	top: 120px;
+	right: 55px;
+
+	&-2 {
+		position: relative;
+		top: 135px;
+		right: 85px;
+	}
+}
+
+//ABOUT
+.about {
+	height: 800px;
+	background-color: rgb(224, 229, 255);
+}
+
+.headshot {
+	width: 200px;
+	height: 300px;
+	float: right;
+}
+
+.general-container {
+	position: relative;
+	top: 5%;
+	background-color: lightgray;
+	height: 700px;
+	width: 70%;
+	margin: auto;
+	padding: 20px;
+}
+
+.aboutme-container {
+	h1 {
+		font-size: 32px;
+	}
+}
+
+.card-row {
+	display: flex;
+	border: black solid 2px;
+	height: 300px;
+	margin: 10px;
+	justify-content: center;
+
+	.card {
+		margin: 10px 15px;
+		width: 30%;
+	}
+}
+
+//PROJECTS-CONTACT
+.projects-contact {
+	height: 800px;
+	border: solid 2px;
+}
+
+/* //HERO
 .hero {
 	height: 720px;
 
@@ -57,7 +219,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
-	height: 720px;
+	height: 860px;
 
 	@media (min-width: 486px) {
 		height: 700px;
@@ -75,10 +237,9 @@ body {
 	color: whitesmoke;
 	text-align: center;
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	width: 100%;
 	font-size: 30px;
-	z-index: 0;
 
 	span {
 		font-size: 40px;
@@ -87,11 +248,12 @@ body {
 	button {
 		font-size: 20px;
 		border: whitesmoke solid thin;
-		border-radius: 10px;
+		border-radius: 25px;
 		font-family: 'Lato', sans-serif;
 		background-color: rgba(0, 0, 0, 0.5);
 		color: whitesmoke;
 		margin-top: 40px;
+		font-size: 32px;
 
 		&:hover {
 			background-color: rgba($color: #444141, $alpha: 0.5);
@@ -119,4 +281,38 @@ body {
 
 .Projects {
 	height: 560px;
+} */
+
+//Animations
+
+.arrow-spread {
+	animation: 3s slideup infinite;
+}
+
+@keyframes slideup {
+	0% {
+		transform: translateY(0%) rotate(45deg) translateX(30%);
+	}
+
+	50% {
+		transform: translateY(70%) rotate(45deg) translateX(30%);
+		opacity: 10%;
+	}
+
+	100% {
+		transform: translateY(0%) rotate(45deg) translateX(30%);
+	}
+}
+
+@keyframes barspread {
+	0% {
+		height: 1px;
+	}
+
+	100% {
+		height: 5px;
+		transform: translateY(20%);
+		width: 400px;
+		border-bottom: double 3px rgba($color: whitesmoke, $alpha: 0.3);
+	}
 }
