@@ -1,5 +1,9 @@
 @import './fonts.scss';
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background-color: whitesmoke;
 	color: #61686b;
@@ -58,7 +62,7 @@ body {
 
 //HEADER
 .header {
-	height: 800px;
+	height: 650px;
 }
 
 .hero-image {
@@ -69,9 +73,10 @@ body {
 	background-size: cover;
 	background-attachment: fixed;
 	height: 800px;
+	filter: blur(0.6px);
 
 	@media (min-width: 486px) {
-		height: 800;
+		height: 700;
 	}
 }
 
@@ -131,9 +136,12 @@ body {
 	border-top: solid 1px;
 	border-bottom: solid 1px;
 	height: 1px;
-	width: 350px;
+	width: 250px;
 	z-index: 1;
-	animation: barspread 2s ease-out forwards;
+
+	@media (min-width: 480px) {
+		animation: barspread 2s ease-out forwards;
+	}
 
 	/* &:hover {		
 		transform: translateY(-5px);
@@ -161,24 +169,23 @@ body {
 	background-color: rgba(lightgray, 0.5);
 }
 
-.headshot {
-	width: 175px;
-	height: 225px;
-	float: right;
-}
-
 .general-container {
 	position: relative;
 	top: 5%;
 	background-color: whitesmoke;
-	height: 700px;
+	height: 3200px; //original 600px
 	width: 60%;
 	margin: auto;
-	border-radius: 1%;
+	margin-top: 20px;
+	border-radius: 20px;
 	padding: 20px;
 
 	h1 {
-		font-size: 32px;
+		font-size: 24px;
+	}
+
+	p {
+		font-size: 14px;
 	}
 
 	.row {
@@ -186,23 +193,53 @@ body {
 	}
 }
 
+#about {
+	padding-top: 10px;
+}
+
+.gc-row {
+	display: flex;
+
+	.aboutme-container {
+		flex: 60%;
+	}
+
+	.headshot {
+		flex: 30%;
+		width: 160px;
+		height: 225px;
+		margin-right: 70px;
+		border: solid gray 1px;
+	}
+}
+
 .card-row {
 	display: flex;
+	flex-flow: column;
 	border: black solid 2px;
-	height: 250px;
 	margin: 10px;
 	justify-content: center;
 
+	@media (min-width: 480px) {
+		flex-flow: row;
+	}
+
 	.card {
-		margin: 10px 15px;
-		width: 30%;
+		margin: 5px 10px;
+		height: 216px;
+		flex: 100%;
+
+		@media (min-width: 480px) {
+			flex: 25%;
+		}
 	}
 }
 
 //PROJECTS-CONTACT
 .projects-contact {
 	height: 800px;
-	border: solid 2px;
+
+	background-color: rgba(whitesmoke, 0.5);
 }
 
 /* //HERO
@@ -308,13 +345,14 @@ body {
 
 @keyframes barspread {
 	0% {
+		width: 10%;
 		height: 1px;
 	}
 
 	100% {
 		height: 5px;
 		transform: translateY(20%);
-		width: 400px;
+		width: 30%;
 		border-bottom: double 3px rgba($color: whitesmoke, $alpha: 0.3);
 	}
 }
